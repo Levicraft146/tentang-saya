@@ -1,0 +1,294 @@
+/* Global Styles - Mengatur font, margin, padding, dan warna latar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Latar belakang hitam */
+    color: #333; /* Warna teks abu-abu gelap */
+    scroll-behavior: smooth; /* Membuat scroll halus */
+}
+/* Header - Mengatur tampilan header yang sticky di atas */
+header {
+    position: sticky; /* Header tetap di atas saat scroll */
+    top: 0;
+    background-color: #282c34; /* Warna latar gelap */
+    padding: 1rem 2rem;
+    color: white;
+    display: flex; /* Mengatur flexbox untuk elemen dalam header */
+    justify-content: space-between; /* Menyebar kiri dan kanan */
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    z-index: 1000; /* Agar header tetap di atas elemen lain */
+}
+/* Kiri - Foto profil dan nama */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+.profile-pic {
+    width: 50px; /* Ukuran gambar */
+    height: 50px;
+    border-radius: 50%; /* Membuat gambar bulat */
+    margin-right: 10px;
+    object-fit: cover; /* Menjaga gambar agar proporsional */
+    border: 2px solid #00ffff; /* Border biru pada foto */
+}
+/* Kanan - Menu navigasi */
+.header-right ul {
+    display: flex; /* Flexbox untuk link */
+    gap: 1.5rem; /* Jarak antar link */
+    margin: 0;
+    padding: 0;
+}
+.header-right a {
+    text-decoration: none; /* Menghapus garis bawah link */
+    font-size: 1.1rem;
+    color: #61dafb; /* Warna biru terang */
+    transition: color 0.3s; /* Efek transisi saat hover */
+}
+.header-right a:hover {
+    color: #fff; /* Warna putih saat hover */
+}
+/* Responsif - Menyesuaikan tampilan untuk layar kecil */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Susunan vertikal pada layar kecil */
+        align-items: flex-start;
+    }
+    .header-right ul {
+        flex-direction: column;
+        gap: 0.5rem; /* Jarak lebih kecil antara link */
+    }
+}
+/* Section - Mengatur bagian halaman umum */
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    height: 100vh; /* Setiap section mengambil tinggi layar penuh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Home Section - Mengatur bagian beranda dengan gambar latar */
+#home {
+    background: url('bg.jpg') center/cover no-repeat; /* Gambar latar penuh */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Menutupi layar penuh */
+    text-align: center;
+}
+/* Gambar Profil di Home */
+#home img {
+    border-radius: 50%; /* Membuat gambar bulat */
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* Menjaga gambar proporsional */
+    margin-bottom: 20px;
+}
+/* Warna teks di Home */
+#home h1, #home p {
+    color: #fff; /* Warna putih untuk teks */
+}
+#home h1 {
+    font-size: 2.5rem; /* Ukuran font judul */
+}
+#home p {
+    font-size: 1.1rem; /* Ukuran font deskripsi */
+}
+
+/* Tentang Saya */
+#about {
+    background: url('bgabout.jpg') center/cover no-repeat; /* Gambar latar */
+    display: flex;
+    align-items: center; /* Pusatkan konten secara vertikal dan horizontal */
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Layar penuh */
+}
+#about h2, #about p {
+    color: #fff; /* Warna teks putih */
+}
+#about h2 {
+    margin-bottom: 20px;
+}
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+/* Platform Images - Gambar platform */
+.platform-images {
+    display: flex;
+    justify-content: center; /* Pusatkan gambar */
+    gap: 20px; /* Jarak antar gambar */
+}
+.platform-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover; /* Menghindari gambar pecah */
+    transition: transform 0.3s; /* Efek hover */
+}
+.platform-image:hover {
+    transform: scale(1.1); /* Memperbesar gambar saat hover */
+}
+#project {
+    background-image: url('bgproyek.jpg'); /* Ganti dengan path gambar latar belakang Anda */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4rem 2rem;
+    color: white;
+    text-align: center;
+}
+#project h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+/* Kontainer untuk project */
+.project-container {
+    display: flex;
+    justify-content: space-between; /* Membuat jarak antar proyek */
+    gap: 1rem; /* Memberikan jarak antar proyek */
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Memastikan semua proyek berada dalam satu baris jika memungkinkan */
+}
+/* Setiap proyek */
+.project {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 30%; /* Setiap proyek mengambil 30% dari lebar kontainer */
+    max-width: 300px; /* Batasi lebar maksimum untuk memastikan proyek kecil */
+    text-align: center;
+    overflow: hidden;
+}
+/* Judul proyek */
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #00fbff;
+}
+/* Deskripsi proyek */
+.project p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+/* Video container */
+.video-container {
+    position: relative;
+    width: 100%; /* Video memenuhi lebar proyek */
+    padding-top: 177.78%; /* Menjaga rasio aspek 9:16 */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/* Responsif */
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column; /* Pada layar kecil, tampilkan proyek dalam kolom */
+        align-items: center; /* Menyusun elemen ke tengah */
+    }
+
+    .project {
+        width: 90%; /* Proyek mengambil hampir seluruh lebar layar */
+    }
+}
+#contact {
+    background: url('bgsisoal.jpg') center/cover no-repeat; /* Gambar latar */
+    padding: 4rem 2rem;
+    color: white;
+    text-align: center;
+}
+#contact h2, #contact p, .contact-list, .contact-item {
+    animation: fadeIn 1.5s ease-in-out; /* Animasi masuk */
+}
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.contact-item {
+    font-size: 1.5rem;
+}
+.contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.contact-item a:hover {
+    color: #ffffff;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling untuk footer agar tetap di bawah */
+footer {
+    background-color: #282c34;
+    color: #61dafb;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+/* Link media sosial */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    display: inline;
+    margin: 0 10px;
+}
+ul li a {
+    color: #0288d1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease; /* Menambahkan transisi untuk hover */
+}
+ul li a:hover {
+    text-decoration: underline;
+}
+/* Animasi naik dan turun */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.5s, opacity 0.5s; /* Transisi halus */
+}
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
